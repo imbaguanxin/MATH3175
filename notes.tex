@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}  
+\usepackage{graphicx}
+\usepackage{geometry}   %设置页边距的宏包
+\usepackage{algpseudocode}
+\usepackage{comment}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{framed}
+\usepackage{verbatim}
+\usepackage{microtype}
+\usepackage{kpfonts}
+\usepackage{multicol}
+\usepackage{amsfonts}
+\usepackage{array}
+\usepackage{color}
+\usepackage{pgf,tikz}
+\usetikzlibrary{automata, positioning, arrows}
+\usepackage{wrapfig}
+\newcommand{\solu}{{\color{blue} Solution:}}
+\newcommand{\theo}{{\color{blue} Theorem: $\ $}}
+\newcommand{\defi}{{\color{blue} Definition: $\ $}}
+\newcommand{\recall}{{\color{blue} Recall: $\ $}}
+\newcommand{\exe}{{\color{yellow} Exercise: $\ $}}
+\newcommand{\prop}{{\color{blue} Prop: $\ $}}
+
+\newcommand{\hw}{{\color{red} Homework: $\ $}}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\Ib}{\mathbf{I}}
+\newcommand{\Pb}{\mathbf{P}}
+\newcommand{\Qb}{\mathbf{Q}}
+\newcommand{\Rb}{\mathbf{R}}
+\newcommand{\Nb}{\mathbf{N}}
+\newcommand{\Fb}{\mathbf{F}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\Lap}{\mathcal{L}}
+\newcommand{\Zplus}{\mathbf{Z}^+}
+\geometry{left=2cm,right=2cm,top=1.5cm,bottom=2cm}  %设置 上、左、下、右 页边距
+
+% \tikzset{
+%     ->, % makes the edges directed
+%     >=stealth, % makes the arrow heads bold
+%     node distance=2.5cm, % specifies the minimum distance between two nodes. Change if necessary.
+%     every state/.style={thick, fill=gray!10}, % sets the properties for each ’state’ node
+%     initial text=$ $, % sets the text that appears on the start arrow
+% } 
+
+\title{CS3800 HW2}
+\date{}
+\author{Xin Guan}
+
+
+\begin{document}  
+\begin{enumerate}
+    \item 01.22
+    \begin{enumerate}
+        \item \defi 7.1
+        
+        Function $f: X \rightarrow Y$ is bijection if $f$ is both surjection(on to) and injection (one to one)
+
+        \item \theo 7.2 
+        
+        $f: X \rightarrow Y$ is bijection $\Leftrightarrow$\\
+        $\exists g: Y \rightarrow X$ s.t. $g \circ f = id_x, f \circ g = id_y$ ($id_x$ means identity)
+
+        Such $g$ is called the inverse of f. Denoted by $f^{-1}$
+
+        \item \recall 
+        
+        $\circ$ Composition of two injective functions is injective. \\
+        $\circ$ Composition of two surjective functions is surjective.\\
+        $\circ$ Composition of two bijective functions is bijective.\\
+
+        \item \defi 7.4 Permutation:
+        
+        Permutation on set $X$ is a bijection $f : X \rightarrow X$
+
+        \item prop 7.5
+        \begin{enumerate}
+            \item if $f: X \rightarrow X$ is a permutation then $\exists f^{-1}: X \rightarrow X$ which is also permutation.
+            \item composition of two permutation is again a permutation.
+        \end{enumerate}
+
+        \item \defi 7.6
+        
+        if $X = \{1,2,\dots,n\}$ then, $S_n :=$ \{all permutation on $X$\} 
+
+        \item EX 7.7
+        
+        $\alpha = (1 \ 2 \ 3 \ 4 \ 5) \rightarrow (3 \ 4 \ 1 \ 2 \ 5)$\\
+        $\beta = (1 \ 2 \ 3 \ 4 \ 5) \rightarrow (5 \ 1 \ 4 \ 3 \ 2)$
+
+        Find $\alpha\beta$ (composition of $\alpha$ and $\beta$), $\alpha^{-1}$
+
+        \solu 
+
+        $(\alpha\beta)(1) = \alpha(\beta(1)) = \alpha(5) = 5$\\
+        $(\alpha\beta)(2) = \alpha(\beta(2)) = \alpha(1) = 3$\\
+        $(\alpha\beta)(3) = \alpha(\beta(3)) = \alpha(4) = 2$\\
+        $(\alpha\beta)(4) = \alpha(\beta(4)) = \alpha(5) = 1$\\
+        $(\alpha\beta)(5) = \alpha(\beta(5)) = \alpha(2) = 4$
+
+        Then, $\alpha\beta = (1 \ 2 \ 3 \ 4 \ 5) \rightarrow (5 \ 3 \ 2 \ 1 \ 4)$\\
+
+        $\alpha^{-1} = (3 \ 4 \ 1 \ 2 \ 5) \rightarrow (1 \ 2 \ 3 \ 4 \ 5)$\\
+        rearrange:\\
+        $\alpha^{-1} = (1 \ 2 \ 3 \ 4 \ 5) \rightarrow (3 \ 4 \ 1 \ 2 \ 5)$
+
+        \item \hw 2.1 9(b) 
+        
+        $g : \Z_8 \Rightarrow \Z_12, g([x]_8) = [6x]_12$ show that g is well defined.
+        
+        \solu
+
+        \begin{proof}
+        Suppose $[x]_8 = [x']_8$, WTS $g([x]_8) = g([x']_8)$
+
+        Let $[x]_8 = [x']_8 \\ \Rightarrow x \equiv x' (mod \ 8) \\ \Rightarrow 8|(x - x') \\ \Rightarrow x - x' = 8*q $ for some $q \in \Z$ \\
+        $x = 8\cdot q + x'$
+
+        By definition of $g$, $g([x]_8) = [6x]_{12}$\\
+        Then, $g([x]_8) = [6(8q+x')]_{12} = [48q + 6x']_{12}, g([x']_8) = [6x']_{12}$\\
+        WTS $[48q + 6x']_{12} = [6x']_{12}$\\
+        Enough to show: $12 | (48q + 6x' - 6x')$\\
+        Since $48q + 6x' - 6x' = 48 q = 12 \cdot 4 \cdot q$\\
+        $\Rightarrow 12 | 12 \cdot 4 \cdot q$\\
+        $\Rightarrow 12 | (48q + 6x' - 6x')$ \\
+        $\Rightarrow g([x]_8) = g([x']_8)$
+        \end{proof}
+        
+        
+
+    \end{enumerate}
+\end{enumerate}
+\end{document}
