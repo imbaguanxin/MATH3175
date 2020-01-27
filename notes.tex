@@ -164,90 +164,233 @@
 
         each permutation $f$ there is an inverse $f^{-1}$ such that $f \circ f^{-1} = id, f^{-1} \circ f = id$.
 
-    \item \defi 8.1 Disjoint cycle decomposition
+        \item \defi 8.1 Disjoint cycle decomposition
     
-    Suppose $\alpha = \begin{pmatrix}
-        1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
-        3 & 4 & 8 & 1 & 2 & 6 & 7 & 5
-    \end{pmatrix}$ \\= (1 3 8 5 2 4)(6)(7) or (1 3 8 5 2 4) (in cycle notation)
+        Suppose $\alpha = \begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+            3 & 4 & 8 & 1 & 2 & 6 & 7 & 5
+        \end{pmatrix}$ \\= (1 3 8 5 2 4)(6)(7) or (1 3 8 5 2 4) (in cycle notation)
     
-    \item \defi 8.2 
+        \item \defi 8.2 
     
-    2-cycle $\rightarrow$ (i j) $i\ne j$ \\
-    3-cycle $\rightarrow$ (i j k) i,j,k distinct \\
-    r-cycle $\rightarrow$ ($i_1, i_2, \dots, i_r$),  $i_1, i_2, \dots, i_r$ distinct\\
+        2-cycle $\rightarrow$ (i j) $i\ne j$ \\
+        3-cycle $\rightarrow$ (i j k) i,j,k distinct \\
+        r-cycle $\rightarrow$ ($i_1, i_2, \dots, i_r$),  $i_1, i_2, \dots, i_r$ distinct\\
 
-    \item \exe 8.3
+        \item \exe 8.3
     
-    $\alpha = (142), \beta = (13)$
-    $\alpha \rightarrow$ 3-cycle, $\beta \rightarrow$ 2-cycle.
+        $\alpha = (142), \beta = (13)$
+        $\alpha \rightarrow$ 3-cycle, $\beta \rightarrow$ 2-cycle.
 
-    \item identity permutation in $S_n$
+        \item identity permutation in $S_n$
+    
+        \begin{enumerate}
+            \item (1)(2)$\dots$(n)
+            
+            \item fixes $\forall i$
+            
+            \item 1-cycle $(i)$ fixes $i$
+            
+            \item often we do not note 1-cycle: $\alpha = (142) = (142)(3)$
+            
+            \item id = (1) = (1)(2)$\dots$(n)
+        \end{enumerate}
+
+        \item \exe 8.5 multiplication of permutation
+        
+        $\alpha = (142), \beta = (13), \in S_4$
+
+        compute - write as a product of disjoint cycles (same as \exe 7.7 with new notation)
+
+        $\alpha\beta = (142)(13) = (1342)$
+
+        HOWTO: $\beta: 1 \rightarrow 3$, then $\alpha: 3 \rightarrow 3$, then (13) now.\\
+        $\beta: 3 \rightarrow 1$, then $\alpha 1 \rightarrow 4$, then (134) now.\\
+        $\beta: 4 \rightarrow 4$, then $\alpha 4 \rightarrow 2$, then (1342).
+
+        Similarly: $\beta\alpha = (13)(142) = (1423)$
+
+        \item \rem 8.6
+        In general $\alpha\beta \ne \beta\alpha$\\
+        if $\alpha, \beta$ are disjoint then $\alpha\beta  = \beta\alpha$
+        
+
+        \item \defi 8.7 
+        
+        Order of permutation $\alpha$ is the smallest positive integer $n$ such that $\alpha^n = (1)$ where $\alpha^n = \alpha \alpha \dots \alpha$ (there are n $\alpha$'s)
+
+        \item \exe 8.8 
+
+        $\alpha = (142)$
+
+        $\alpha^2 = \alpha \alpha = (142)(142) = (124)$
+
+        $\alpha^3 = \alpha\alpha\alpha = (142)(142)(142) = (142)(124) = (1)(2)(4) = (1)$
+
+        Then $|\alpha|$ = 3. Order of $\alpha$ is 3.
+
+        $\beta$ = (13)\\
+        $\beta^2 = (13)(13) = (1)$ \\
+        Then $|\beta| = 2$
+        
+        \item \prop 8.10 Order of an r-cycle is $r$
+        
+        \item \exe 8.11 $\alpha = (143)(25)$\\
+        $|\alpha| = LCM(|(143)|,|(25)|) = LCM(3,2) = 6 $
+
+        \item \prop 8.12 Let $\alpha, \beta$ be two disgoint permutation. Then $|\alpha\beta| = LCM(|\alpha|,|\beta|)$
+        
+        \item Possible Disjoint Cycles\\
+        \begin{tabular}{l|l|l|l|l}
+            \hline
+            Partition of 6 & Disjoint cycles & Example & Order & How many different permutation \\
+            6 & 6 cycle & (132654)& 6 & $\frac{6!}{6} = 5!$ \\
+            5 + 1& 5 cycle, 1 cycle & (13465)(2) & 5 & ${6 \choose 5} \frac{5!}{5} \frac{1!}{1} = {6 \choose 5}\cdot 4!$ \\
+            4 + 2 & 4 cycle, 2 cycle & (1354)(26) & 4 & ${6 \choose 4}{2 \choose 2} \frac{4!}{4} \frac{2!}{2}$
+        \end{tabular}
+        NOTE: We need to divide by the order since (123) = (231) = (312). We need to eliminate repeative terms.
+    \end{enumerate}
+    
+    \item 01.27 GROUPS!
     
     \begin{enumerate}
-        \item (1)(2)$\dots$(n)
-        
-        \item fixes $\forall i$
-        
-        \item 1-cycle $(i)$ fixes $i$
-        
-        \item ofthen we donot note 1-cycle: $\alpha = (142) = (142)(3)$
-        
-        \item id = (1) = (1)(2)$\dots$(n)
-    \end{enumerate}
+        \item \defi 9.11 G set 
+        \begin{enumerate}
+            \item $G \times G \rightarrow * G$ binary operation: $(x,y) \rightarrow x * y$
+            \item associative law:
+            
+            $(x * y) * z= x*(y*z), \forall x,y,z \in G $
 
-    \item \exe 8.5 nultiplication of permutation
-    
-    $\alpha = (142), \beta = (13), \in S_4$
+            \item $\exists e \in G $ is identity s.t. $e * x = x, x * e = x , \forall x \in G$
+            \item $\forall x \in G, \exists y \in G s.t. x*y = e, y*x = e$ \\
+            and $y$ is called inverse of $x$. (it is not necessarily unique)
+            \item $x * y = y * x \forall x,y \in G$
+        \end{enumerate}
+        If only the \textbf{first 2} properties hold, it is called \textbf{semigroups}.
 
-    compute - write as a product of disjoint cycles (same as \exe 7.7 with new notation)
+        If only the \textbf{first 3} properties hold, it is called \textbf{monoid}.
 
-    $\alpha\beta = (142)(13) = (1342)$
+        If only the \textbf{first 4} properties hold, it is called \textbf{group}.
 
-    HOWTO: $\beta: 1 \rightarrow 3$, then $\alpha 3 \rightarrow 3$, then (13) now.\\
-    $\beta 3 \rightarrow 1$, then $\alpha 1 \rightarrow 4$, then (134) now.\\
-    $\beta 4 \rightarrow 4$, then $\alpha 4 \rightarrow 2$, then (1342).
+        If only the \textbf{all} properties hold, it is called \textbf{Commutative group (Abelian group)}.
 
-    Similarly: $\beta\alpha = (13)(142) = (1423)$
+        \item \textbf{Examples:}
 
-    \item \rem 8.6
-    Ingeneral $\alpha\beta \ne \beta\alpha$\\
-    if $\alpha, \beta$ are disjoint then $\alpha\beta  = \beta\alpha$
-    \end{enumerate}
+        \begin{enumerate}
+            \item $(\mathbb{Z}, + )$
+            \begin{enumerate}
+                \item $x,y \in \mathbb{Z}, x+y \in \mathbb{Z}$
+                \item $(x+y)+z = x+(y+z)$
+                \item $x + 0 = x, 0 + x = x, \forall x \in \mathbb{Z}$ therefore $e = 0$
+                \item $x + y =0, y + x = 0 \rightarrow y = -x$
+                \item $x + y = y + x$
+                
+                Then, $(\mathbb{Z}, + )$ is \textbf{Abelian group}
+            \end{enumerate}
+            \item $(\mathbb{Z}, \cdot )$
+            \begin{enumerate}
+                \item $x,y \in \mathbb{Z}, x\cdot y \in \mathbb{Z}$
+                \item $(x\cdot y)\cdot z = x\cdot (y\cdot z)$
+                \item $x \cdot 1 = x, 1 \cdot x = x, \forall x \in \mathbb{Z}$ therefore $e = 1$
+                \item $x \cdot y =1, y \cdot x = 1 \rightarrow$ NO inverse in general. \{1,-1\} have inverse
+                \item $x \cdot y = y \cdot x$
+                
+                Then, $(\mathbb{Z}, + )$ is a \textbf{commutative monoid} but not a \textbf{group}
+            \end{enumerate}
+            \item  $(\mathbb{Z}, - )$
+            \begin{enumerate}
+                \item $x,y \in \mathbb{Z}, x-y \in \mathbb{Z}$
+                \item $(x-y)-z \ne x-(y-z)$ example: $2 - (1 - 5) \ne (2 - 1) - 5$
+                
+                Then, $(\mathbb{Z}, + )$ is not even a \textbf{semigroup}.\\
+                We don't need to check following properties since it does not have an operation. All the following properties are target at the operation.
+            \end{enumerate}
+            \item  $(\mathbb{Z}_6, +_6)$
+            \begin{enumerate}
+                \item $[x]_6,[y]_6 \in \mathbb{Z}_6, [x]_6+[y]_6  = [x+y]_6\in \mathbb{Z}_6$
+                \item $(x+y)+z = x+(y+z)$
+                \item $e = [0]_6$
+                \item inverse: $[-x]_6 + [x_6] = e$
+                \item $[x]_6+[y]_6  =[y]_6+[x]_6 $
+                
+                $(\mathbb{Z}_6, +_6)$ is \textbf{Abelian group}
+            \end{enumerate}
+            \item  $(\mathbb{Z}_6, \cdot_6)$
+            \begin{enumerate}
+                \item $[x]_6,[y]_6 \in \mathbb{Z}_6, [x]_6\cdot[y]_6  = [x\cdot y]_6\in \mathbb{Z}_6$
+                \item works
+                \item $e = [1]_6$
+                \item y does not always exists. only when $gcd(x,6) =1$ inverse exists.
+                \item $[x]_6\cdot [y]_6  =[y]_6\cdot [x]_6 $
+                
+                $(\mathbb{Z}_6, +_6)$ is \textbf{commutative monoid} but not a \textbf{group}
+            \end{enumerate}
+            \item  $(\mathbb{Z}_6^{\times}, \cdot_6)$
+            
+            $\mathbb{Z}_6^{\times} = \{[x]_6 \in \mathbf{Z}_6 | gcd(x,6) = 1 \}$\\
+            $\mathbb{Z}_6^{\times} = \{[1]_6, [5]_6 \}$
+            \begin{enumerate}
+                \item $[x]_6,[y]_6 \in \mathbb{Z}_6, [x]_6\cdot[y]_6  = [x\cdot y]_6\in \mathbb{Z}_6$
+                \item works
+                \item $e = [1]_6$
+                \item holds!
+                \item $[x]_6\cdot [y]_6  =[y]_6\cdot [x]_6 $
+                
+                $(\mathbb{Z}_6^{\times}, +_6)$ is \textbf{Abelian group}
+            \end{enumerate}
 
-    \item \defi 8.7 
-    
-    Order of permutation $\alpha$ is the smallest positive integer $n$ such that $\alpha^n = (1)$ where $\alpha^n = \alpha \alpha \dots \alpha$ (there are n $\alpha$'s)
+            \item $(M_2(\mathbb{R}),+)$, $M_2(\mathbb{R}) = M \in \mathbb{R}^{2\times 2}$
+            \begin{enumerate}
+                \item Yes, there is a closed binary operation.
+                \item associate law is inherted from +
+                \item $e = \begin{bmatrix}
+                    0 & 0 \\ 0 & 0
+                \end{bmatrix}$
+                \item inverses exist.
+                \item commutative property holds.\\
+                $(M_2(\mathbb{R}),+)$ is \textbf{Abelian group}
+            \end{enumerate}
 
-    \item \exe 8.8 
+            \item $(M_2(\mathbb{R}),\cdot)$
+            \begin{enumerate}
+                \item Yes, there is a closed binary operation.
+                \item (AB)C = A(BC)
+                \item $e = \begin{bmatrix}
+                    1 & 0 \\ 0 & 1
+                \end{bmatrix}$
+                \item inverses not necessaily exist. only $det(x) \ne 0$
+                \item commutative property dose not hold.
+                
+                $(M_2(\mathbb{R}),+)$ is \textbf{monoid}
+            \end{enumerate}
 
-    $\alpha = (142)$
+            \item $(GL_2(\mathbb{R}), \cdot)$ GL: general linear group -- determinants is $\ne$ 0
+            \begin{enumerate}
+                \item $det(AB) = det(A)det(B) \ne 0$
+                \item (AB)C = A(BC)
+                \item $e = \begin{bmatrix}
+                    1 & 0 \\ 0 & 1
+                \end{bmatrix}$
+                \item inverse exists
+                \item $AB \ne BA$ in general
+                
+                $(GL_2(\mathbb{R}), \cdot )$ is \textbf{Abelian group}
+            \end{enumerate}
 
-    $\alpha^2 = \alpha \alpha = (142)(142) = (124)$
+            \item $(S_3, \cdot)$\\
+            $S_3 = \{(123),(132),(12),(13),(23),(1)\}$
+            \begin{enumerate}
+                \item $\alpha \cdot \beta = \alpha\beta$
+                \item associative law good
+                \item $e = (1)$
+                \item inverse exists $(123)^{-1} = (321) \dots$
+                % \item $AB \ne BA$ in general
+                
+                % $(GL_2(\mathbb{R}), \cdot )$ is \textbf{Abelian group}
+            \end{enumerate}
 
-    $\alpha^3 = \alpha\alpha\alpha = (142)(142)(142) = (142)(124) = (1)(2)(4) = (1)$
-
-    Then $|\alpha|$ = 3. Order of $\alpha$ is 3.
-
-    $\beta$ = (13)\\
-    $\beta^2 = (13)(13) = (1)$ \\
-    Then $|\beta| = 2$
-    
-    \item \prop 8.10 Order of an r-cycle is $r$
-    
-    \item \exe 8.11 $\alpha = (143)(25)$\\
-    $|\alpha| = LCM(|(143)|,|(25)|) = LCM(3,2) = 6 $
-
-    \item \prop 8.12 Let $\alpha, \beta$ be two disgoint permutation. Then $|\alpha\beta| = LCM(|\alpha|,|\beta|)$
-    
-    \item Possible Disjoint Cycles\\
-    \begin{tabular}{l|l|l|l|l}
-        \hline
-        Partition of 6 & Disjoint cycles & Example & Order & How many different permutation \\
-        6 & 6 cycle & (132654)& 6 & $\frac{6!}{6} = 5!$ \\
-        5 + 1& 5 cycle, 1 cycle & (13465)(2) & 5 & ${6 \choose 5} \frac{5!}{5} \frac{1!}{1} = {6 \choose 5}\cdot 4!$ \\
-        4 + 2 & 4 cycle, 2 cycle & (1354)(26) & 4 & ${6 \choose 4}{2 \choose 2} \frac{4!}{4} \frac{2!}{2}$
-    \end{tabular}
-    NOTE: We need to divide by the order since (123) = (231) = (312). We need to eliminate repeative terms.
+        \end{enumerate}
+    \end{enumerate} 
++1 (01.27)
 \end{enumerate}
 \end{document}

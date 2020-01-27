@@ -44,6 +44,21 @@
 \begin{document} 
     \maketitle
     \begin{enumerate}
-        \item 
+        \item 2.1.16 
+        
+        \solu
+
+        $\rightarrow:$\\
+        Suppose $f$ is onto. WTS there exists a function $g$ s.t. $f\circ g = 1_B$\\
+        We can construct an g by following steps:\\
+        Let $y \in B$. Then $\exists x \in A$ s.t. $f(x) = y$\\
+        Choose one of such $x$'s call it $x_y$.\\
+        Set $g(y) = x_y$\\
+        Then $\forall y_b \in B$, $f \circ g(y_b) = f(g(y_b)) = f(x_{y_b}) = x_y = 1_B(y_b)$ \\
+        Then there exists a function g s.t. $f \circ g = 1_B$
+
+        $\leftarrow:$\\
+        Suppose there exists a function $g$ s.t. $f\circ g = 1_B$. WTS $f$ is onto. \\
+        Let $y \in B$, then $g(y) \in A$ and $(f \circ g)(y) = y$
     \end{enumerate}
 \end{document}
