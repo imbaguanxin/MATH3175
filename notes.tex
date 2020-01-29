@@ -175,7 +175,7 @@
     
         2-cycle $\rightarrow$ (i j) $i\ne j$ \\
         3-cycle $\rightarrow$ (i j k) i,j,k distinct \\
-        r-cycle $\rightarrow$ ($i_1, i_2, \dots, i_r$),  $i_1, i_2, \dots, i_r$ distinct\\
+        r-cycle $\rightarrow$ ($i_1, i_2, \dots, i_r$),  $i_1, i_2, \dots, i_r$ distinct
 
         \item \exe 8.3
     
@@ -240,15 +240,22 @@
 
         \item \prop 8.12 Let $\alpha, \beta$ be two disgoint permutation. Then $|\alpha\beta| = LCM(|\alpha|,|\beta|)$
         
-        \item Possible Disjoint Cycles\\
+        \item Possible Disjoint Cycles
+        
         \begin{tabular}{l|l|l|l|l}
             \hline
-            Partition of 6 & Disjoint cycles & Example & Order & How many different permutation \\
+            Partition of 6 & Disjoint cycles & Example & Order & \# different permutations \\
             6 & 6 cycle & (132654)& 6 & $\frac{6!}{6} = 5!$ \\
             5 + 1& 5 cycle, 1 cycle & (13465)(2) & 5 & ${6 \choose 5} \frac{5!}{5} \frac{1!}{1} = {6 \choose 5}\cdot 4!$ \\
-            4 + 2 & 4 cycle, 2 cycle & (1354)(26) & 4 & ${6 \choose 4}{2 \choose 2} \frac{4!}{4} \frac{2!}{2}$
+            4 + 2 & 4 cycle, 2 cycle & (1354)(26) & 4 & ${6 \choose 4}{2 \choose 2} \frac{4!}{4} \frac{2!}{2}$\\
+            4 + 1 + 1 & (4,1,1) & (1354)(2)(6) & 4 & ${6 \choose 4}\frac{4!}{4}{2 \choose 1}\frac{2!}{2}{1 \choose 1}\frac{1!}{1} \frac{1}{2!}$
         \end{tabular}
-        NOTE: We need to divide by the order since (123) = (231) = (312). We need to eliminate repeative terms.
+
+        \textbf{NOTE}: We need to divide by the order since (123) = (231) = (312). We need to eliminate repeative terms.
+        
+        Also, we need to eliminate possible arrangement of cycles of the same length. In (4,1,1) the 1 cycles can appear in different orders but representing the same disjoint cycles.
+        
+        \textbf{Notation}: (6), (5,1), (4,2), (4,1,1), (3,3), (3,2,1), (3,1,1,1), (2,2,2), (2,2,1,1), (2,1,1,1,1), (1,1,1,1,1,1)
     \end{enumerate}
     
     \item 01.27 GROUPS!
@@ -391,6 +398,86 @@
 
         \end{enumerate}
     \end{enumerate} 
+    \item 01.29
+    \begin{enumerate}
+        \item \recall 10.2
+        
+        monoids(prop 1,2,3) $\subseteq$ semigroups (prop 1,2) \\
+        groups(prop 1,2,3,4) $\subseteq$ monoids(prop 1,2,3) \\
+        Abelian groups(prop 1,2,3,4,5) $\subseteq$ groups(prop 1,2,3,4) \\
+
+        \item 10.3 Let $G$ be a monoid, then $G$ has a unique identity element $e$
+        \begin{proof}
+            By definition of monoid, $\exists e \in G$ s.t $ex = x, xe = x, \forall x \in G$\\
+            Suppose that $e$ and $e'$ are identity of $G$. i.e $ex = x, xe = x, e'x = x, xe' = x$\\
+            WTS $e = e'$\\
+            $e = e e' (e' \text{ is identity}) = e' (e \text{ is identity})$\\
+            \textbf{NOTE:} we are using symmetric and transitive property of =
+        \end{proof}
+
+        \item 10.4 \prop 
+        
+        Leg $G$ be a group. Let $x \in G$ then $\exists ! y \in G \ \text{ s.t. } \ xy = e \text{ and } yx = e$
+
+        \begin{proof}
+            let $x \in G$ by definition, $\exists y \in G \text{ s.t. } xy = e, yx = e$
+
+            Suppose $y \text{ and } y' \in G \text{ s.t. } xy = e, yx = e; xy' = e, y'x = e$\\
+            WTS $y = y'$
+
+            by assumption: $$xy = e$$\\
+            operate $y'$ on the left: $$y'(xy) = y'e$$\\
+            associate law: $$(y'x)y = y'e$$\\
+            by assumption:$$y = y'e$$\\
+            property of e:$$y = y'$$
+
+            Therefore, $\exists ! y \in G \ \text{ s.t. } \ xy = e \text{ and } yx = e$
+        \end{proof}
+        
+        \item 10.5 \prop
+        
+        Let $G$ be a group then cancellation laws hold. i.e.
+
+        $$ax = ay \Rightarrow x = y$$
+        $$xa = ya \Rightarrow x = y$$
+
+        \begin{proof}
+            $$ax = ay$$
+            Let $a^{-1}$ be the inverse of a, then operate $a^{-1}$ on both sides.
+            $$a^{-1}(ax) = a^{-1}(ay)$$
+            associative law:
+            $$(a^{-1}a)x = (a^{-1}a)y $$
+            property of inverse:
+            $$ex = ey$$
+            property of identity:
+            $$x = y$$
+            Therefore $ax = ay \Rightarrow x = y$\\
+            similarly, $xa = ya \Rightarrow x = y$
+        \end{proof}
+
+        \item 10.6 \defi Subgroup
+        
+        Let $G$ be a group. A subgroup of $G$ is $H$ if:
+        \begin{itemize}
+            \item $H \subset G$ is a subset of $G$
+            \item $H$ is a group under the same operation. i.e. ($H,*$) is a group
+        \end{itemize}
+        
+        \item 10.7 \exe
+        
+        G = $(\mathbf{Z}, +)$, H = $(3\mathbf{Z}, +)$
+
+        \item 10.8 \exe 
+        
+        G = $(\mathbf{Z}_6, +_6)$, H = $(3\mathbf{Z}, +)$
+
+        H = $(\{[2], [4], [0]\}, +_6)$
+
+        Need to show: 1. H is a subset 2. (H,$+_6$) is a group
+
+        Just write a cayley table.
+
+    \end{enumerate}
 +1 (01.27)
 \end{enumerate}
 \end{document}
