@@ -205,8 +205,8 @@
         $\alpha\beta = (142)(13) = (1342)$
 
         HOWTO: $\beta: 1 \rightarrow 3$, then $\alpha: 3 \rightarrow 3$, then (13) now.\\
-        $\beta: 3 \rightarrow 1$, then $\alpha 1 \rightarrow 4$, then (134) now.\\
-        $\beta: 4 \rightarrow 4$, then $\alpha 4 \rightarrow 2$, then (1342).
+        $\beta: 3 \rightarrow 1$, then $\alpha: 1 \rightarrow 4$, then (134) now.\\
+        $\beta: 4 \rightarrow 4$, then $\alpha: 4 \rightarrow 2$, then (1342).
 
         Similarly: $\beta\alpha = (13)(142) = (1423)$
 
@@ -415,7 +415,7 @@
             \textbf{NOTE:} we are using symmetric and transitive property of =
         \end{proof}
 
-        \item 10.4 \prop 
+        \item \prop 10.4
         
         Leg $G$ be a group. Let $x \in G$ then $\exists ! y \in G \ \text{ s.t. } \ xy = e \text{ and } yx = e$
 
@@ -434,7 +434,7 @@
             Therefore, $\exists ! y \in G \ \text{ s.t. } \ xy = e \text{ and } yx = e$
         \end{proof}
         
-        \item 10.5 \prop
+        \item \prop 10.5
         
         Let $G$ be a group then cancellation laws hold. i.e.
 
@@ -455,7 +455,7 @@
             similarly, $xa = ya \Rightarrow x = y$
         \end{proof}
 
-        \item 10.6 \defi Subgroup
+        \item \defi 10.6 Subgroup
         
         Let $G$ be a group. A subgroup of $G$ is $H$ if:
         \begin{itemize}
@@ -463,11 +463,11 @@
             \item $H$ is a group under the same operation. i.e. ($H,*$) is a group
         \end{itemize}
         
-        \item 10.7 \exe
+        \item \exe 10.7 
         
         G = $(\mathbf{Z}, +)$, H = $(3\mathbf{Z}, +)$
 
-        \item 10.8 \exe 
+        \item \exe 10.8
         
         G = $(\mathbf{Z}_6, +_6)$, H = $(3\mathbf{Z}, +)$
 
@@ -477,6 +477,58 @@
 
         Just write a cayley table.
 
+    \end{enumerate}
+
+    \item 01.30
+    
+    \begin{enumerate}
+        \item \defi 11.1 
+        
+        Let $(G, *)$ be a group, then $H$ is a subgroup of $G$ if 
+        \begin{itemize}
+            \item $H \subseteq G$, H is a subset of G
+            \item $(H,*)$ is a group.
+        \end{itemize}
+
+        \item \exe 11.2
+        
+        $G = S_3 = \{(1), (123), (132), (12), (13), (23)\}$
+
+        Operation - multiplication of permutation.
+
+        $H = \{(1), (123), (132)\}$ is a subgroup of $G$
+
+        $H$ is a proper subgroup of $G \Leftrightarrow H \ne G$
+        \begin{itemize}
+            \item $S_0$ $H\subset G$
+            \item $S_{00}$ H is nonempty (i.e $H \ne \emptyset$) Usually, we check for identity.
+            \item $S_1$ H is closed under operation
+            \item $S_2$ H has inverse
+        \end{itemize}
+        \textbf{How To Check:}
+        \begin{itemize}
+            \item H is a subset of G: by def of elements of H
+            \item H is a group under operation: 1. closed 2. associative 3. identity 4. inverse
+        \end{itemize}
+
+        When checking small sets, just use Cayley Table:
+
+        \begin{tabular}{c|ccc}
+            & (1) & (123) & (132) \\ \hline
+            (1) & (1) & (123) & (132) \\ 
+            (123) & (123) & (132) & (1) \\ 
+            (132) & (132) & (1) & (123)
+        \end{tabular}
+        
+        It is closed. Identity: e = (1). Inverse exists.
+        
+        \item \rem 11.3
+        
+        Let $(G,*)$ be a group then $(G,*)$ is a subgroup of itself.
+
+        \item \defi 11.4
+        
+        Proper subgroup of $G$ is a subgroup $H$ s.t. $H\ne G$
     \end{enumerate}
 +1 (01.27)
 \end{enumerate}
