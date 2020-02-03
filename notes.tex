@@ -530,6 +530,85 @@
         
         Proper subgroup of $G$ is a subgroup $H$ s.t. $H\ne G$
     \end{enumerate}
+
+    \item 02.03
+    \begin{enumerate}
+        \item \rem 12.2 We proved that if $G$ is a group, $x\in G$, then $\exists !$ inverse $y \in G$
+        \item \prop 12.3 \\
+        Leg $G$ be a group, let $x \in G$. If $xy = e$, then $y = x^{-1}$.\\ i.e. If $xy = e$, then $yx = e$
+        \begin{itemize}
+            \item since G is a group $\exists ! x^{-1}\in G$, multiply by $x^{-1}$ on the left. $$x^{-1}(xy) = x^{-1}e$$
+            $x^{-1}(xy) = (x^{-1}x)y = ey = y = x^{-1}$
+        \end{itemize} 
+
+        \item 12.4 Restating 12.3: 
+        
+        Let $G$ be a group, $x\in G$, it is enough to check $xy=e$ to claim that $y = x^{-1}$
+
+        \item 12.5 Let $G$ be a group. Suppose $x^n=e$ for some n postive integer. Then $x^{-1} = x^{n-1}$.
+        \item \defi 12.6 Let $G$ be a group. Let $x \in G$ then order of x, denoted by $|x|$ is the \textbf{smallest positive integer} $n$ s.t. $x^n=e$. If such $n$ does not exist then $|x| = \infty$
+        \item \defi 12.7 \\
+        $G$ is a Group, $x \in G$.
+        \begin{enumerate}
+            \item $x^n := xxx \dots x $ (n-times) if n is positive integer.
+            \item $x^0 := e$
+            \item $x^{-1}:=$the inverse
+            \item $x^{-n} := (x^{-1})^n = (x^n)^{-1}$
+        \end{enumerate}
+        Then $x^{n}$ is defined on $\mathbb{Z}$
+        \item \prop 12.8 $G$ a group, $x \in G$ then\\
+        $x^nx^m = x^{n+m}, \forall n,m \in \mathbb{Z}$
+        \begin{proof}
+            \begin{itemize}
+                \item $n,m$ positive integer\\
+                $x^nx^m = x\dots x$ (n-times) $x\dots x$ (m-times) = $x\dots x$(n+m times)\\
+                Or use induction.
+                \item $\dots$
+            \end{itemize}
+            Just use definition 12.7 to check all.
+        \end{proof}
+        \item $H$ is asubgroup of $G$ if
+        \begin{itemize}
+            \item $H$ is a subset of G
+            \item $e\in H$ (check for not empty)
+            \item $a,b \in H$ then $ab \in H$
+            \item $a\in H$ then $a^{-1} \in H$
+        \end{itemize}
+        \item \rem 12.10 If $H$ is finite, then it is enough to check:
+        \begin{itemize}
+            \item $H$ is subset of $G$
+            \item $H$ closed under operation
+        \end{itemize} 
+        \begin{proof}
+            $x \in H$ then we have to take $x,x^1,x^2 \dots ,x^n\dots$
+            since we are closed under operation.\\
+            $H$ is finite $\Rightarrow \exists m,n$ s.t. $x^n=x^m$\\
+            Suppose $n \ge m, x^n=x^m$,\\
+            $$x^n = x^mx^{n-m} = x^m$$
+            $$\Rightarrow x^mx^{n-m} = x^me$$
+            $$\Rightarrow x^{n-m} = e$$
+            Then it guarantees that there is identity in $H$
+        \end{proof}
+
+        \item \defi 12.12 $G$ a group, $x\in G$\\
+        $<x>:=\{x^n|n\in \mathbb{Z}\}$
+        
+        \item \prop 12.13 $<x>$ is a subgroup of $G$
+        \begin{proof}
+            1. WTS $<x>\ \subset G$ 
+            \begin{itemize}
+                \item Positive power: $G$ is closed, then $x^2 = xx$ then $x^2$ is in $G$ By induction, $x^n$ is in $G$ for all positive n.
+                \item 0 power: $x^0 = e$, $e$ is in $G$ since $G$ is a group.
+                \item negative power: $x^{-1}$ is in $G$, then $x^{-n}$ is in $G$ (the same reason as the positive powers)
+            \end{itemize}
+            Then $<x> \ \subset G$ \\ \\
+            2. WTS $a,b \in <x>,$ then $ab \in <x>$\\
+            $a \in <x> \Rightarrow a = x^n, n \in \mathbb{Z}$\\
+            $b \in <x> \Rightarrow b = x^m, m \in \mathbb{Z}$
+            $\Rightarrow ab = x^nx^m = x^{n+m} \in <x>$\\ \\
+            3.$a^{-1}$ in $<x>$
+        \end{proof}
+    \end{enumerate}
 +1 (01.27)
 \end{enumerate}
 \end{document}
