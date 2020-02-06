@@ -609,6 +609,100 @@
             3.$a^{-1}$ in $<x>$
         \end{proof}
     \end{enumerate}
+
+    \item 02.06
+    
+    \begin{enumerate}
+        \item \defi 14.1 Let $G$ be a group, let $x \in G$, then conjugate of $x$ by $g\in G$ is $gxg^-1$
+        \item \rem 14.2 
+        \begin{itemize}
+            \item $(13254)^{-1} = (45231)$
+            \item $(13)^{-1} = (31) = (13)$ 
+            \item $(ij)^{-1} = (ji)$
+            \item $a^n = e\rightarrow a^{-1} = a^{n-1}$
+        \end{itemize}
+        \item \exe 14.3 $G = S_4$. Find a conjugate of $x = (143)$\\
+        $g = (23)$ $gxg^{-1} = (23)(143)(23)^{-1} = (23)(143)(32) = (142)(3) = (142)$
+
+        \item \exe Let $G= S_3$ Find all conjugate of $x = (13)$\\
+        Since $S_3 = \{(1), (12), \dots\}$\\
+        $(1)(13)(1)^{-1} = (13)$\\
+        $(12)(13)(12)^{-1} = (23)$\\
+        $(13)(13)(13)^{-1} = (13)$\\
+        $(23)(13)(23)^{-1} = (12)$\\
+        $(123)(13)(123)^{-1} = (12)$\\
+        $(132)(13)(132)^{-1} = (23)$\\
+
+        \item \prop 14.5 Let $\alpha \in S_n$, all conjugate of $\alpha$ = all permutations which have the none disjoint cycle decomposition as $\alpha$
+        
+        \item \exe 14.7 $G= S_5$ $\alpha = (142)(35)$ How many conjugates of $\alpha$ are there in $S_5$?\\
+        i.e. How many permutations in $S_5$ has the form of (3-cycle)(2-cycle)? ${5 \choose 3}\frac{3!}{3} {2 \choose 2}\frac{2!}{2}$
+
+        \item \prop Let $G$ be a group, Let $x \sim  y$ if $x$ is conjugate to y. Conjugate is an equivalece relation.
+        
+        \item \defi 14.9 Let $G$ be a group, $x \in G$, then conjugate(x):= $\{gxg^{-1} \ | \ g \in G\}$
+        
+        \item \rem 14.10 Conj. class of x = equivelence class of x under $y \sim z$ if y is conj to $z$
+        
+        \item \exe 14.11 Let $\alpha = (147)(235) \in S_8$. Find the size of conj class ($\alpha$).
+        
+        \item  $|\text{conj. class} (\alpha)|$ = ${8 \choose 3}\frac{3!}{3} {5 \choose 3}\frac{2!}{2} \frac{1}{2!}$
+        
+        \item \exe 14.12 $G = (\mathbb{Z}_4, +_4)$ Find all conj of $[2]_4$\\
+        $[0] + [2] + [-0] = [2]$\\
+        $[1] + [2] + [-1] = [1] + [2] + [3] = [2]$\\
+        $[2] + [2] + [-2] = [2]$\\
+        $[3] + [2] + [-3] = [2]$
+
+        \item \prop 14.13 Let $G$ be an ebelian group. \\
+        Conj. class(x) = \{x\} $|\text{Conj. class}(x)| = 1$ (property of commutative show that $gxg^{-1} = gg^{-1}x = ex = x)$
+
+        \item Conj. Class(x) = \{x\} $\Rightarrow$ then $x$ commutes with all $g \in G$\\
+        $G$ is disjoint union of its conj classes.
+
+        \item \defi 14.15 Let $G$ be a group be $H$ be a subgroup of $G$. Let $g \in G$. Define $gHg^{-1}: \{ghg^{-1} \ | \ h \in H\}$ This is called conjugate of $H$ by g.
+
+        \item \exe 14.16 Let $G = S_3$ let $H = \{(13), (1)\}$. Find conjugate of $H$ by $g = (123)$\\
+        $(123)(13)(123)^{-1} = (123)(13)(321) = (1)(23)(321) = (12)$\\
+        $(123)(1)(123)^{-1} = (1)$\\
+        $gHg^{-1} = \{(12),(1)\}$
+
+        \item \prop 14.17 Let $G$ be a goup, Let $H$ be a subgroup of $G$. Let $g \in G$ then $gHg^{-1}$ is a subgroup of $G$.
+        \begin{proof}
+            WTS: $gHg^{-1}$ is a subgroup of $G$\\
+            0. $gHg^{-1}$ is a subset of $G$.\\
+            00. $e \in gHg^{-1}$\\
+            1. If $a, b \in gHg^{-1}$, then $ab \in gHg^{-1}$\\
+            2. If $a \in gHg^{-1}$, then $a^{-1} \in gHg^{-1}$
+            \begin{itemize}
+                \item Show $gHg^{-1}$ is a subset of $G$.\\
+                $\forall h \in H, g \in G, g, h, g^{-1} \in G$, $G$ is closed under operation.\\
+                $\Rightarrow ghg^{-1} \in G$. Then $gHg$ is a subset of $G$.
+                \item Show $e \in gHg^{-1}$\\
+                Since $H$ is a group, $\Rightarrow e \in H$.\\ $geg^{-1} = e \Rightarrow e \in gHg^{-1}$.
+                \item Show If $a, b \in gHg^{-1}$, then $ab \in gHg^{-1}$\\
+                $\exists a', b' \in H$ such that $ga'g^{-1} = a, gb'g^{-1} = b$.\\
+                $ab = ga'g^{-1}gb'g^{-1} = ga'(g^{-1}g)b'g^{-1} = g(a'b')g^{-1}$\\
+                Therefore, $ab \in gHg^{-1}$
+                \item Show If $a \in gHg^{-1}$, then $a^{-1} \in gHg^{-1}$\\
+                $\exists a' \in H$ such that $ga'g^{-1} = a$\\
+                Since $H$ is a group, $a'^{-1} \in H$\\
+                Then, $ga'^{-1}g^{-1} \in gHg^{-1}$.\\
+                $a\cdot ga'^{-1}g^{-1} \\
+                = ga'g^{-1}ga'^{-1}g^{-1} \\
+                = ga'(g^{-1}g)a'^{-1}g^{-1} \\
+                = ga'ea'^{-1}g^{-1} \\
+                = ga'a'^{-1}g^{-1} \\
+                = g(a'a'^{-1})g^{-1} \\
+                = geg^{-1}  \\
+                = gg^{-1} \\
+                = e$\\
+                Therefore, $a^{-1} = ga'^{-1}g^{-1} \in gHg^{-1}$
+            \end{itemize}
+            
+        \end{proof}
+        
+    \end{enumerate}
 +1 (01.27)
 \end{enumerate}
 \end{document}
