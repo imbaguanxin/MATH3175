@@ -24,6 +24,8 @@
 \newcommand{\exe}{{\color{green} Example: $\ $}}
 \newcommand{\prop}{{\color{blue} Prop: $\ $}}
 \newcommand{\rem}{{\color{blue} Remark: $\ $}}
+\newcommand{\coro}{{\color{blue} Corollary: $\ $}}
+
 
 
 \newcommand{\hw}{{\color{red} Homework: $\ $}}
@@ -771,6 +773,87 @@
 
     \end{enumerate}
 
+    \item 02.12
+    \begin{enumerate}
+        \item \defi 16.1 Order of a group: \# of elements in that group.
+        \item \defi 16.2 Order of an element: smallest positive integer n such that $g^n = e$
+        \item \prop 16.3 Let $g \in G$, $|<g>| = |g|$\\
+        \begin{proof}
+            $<g> = \{\dots, g^{-1}, g^0, g^1, g^2, \dots\}$\\
+            $|g| = n \Rightarrow g^n = e$ n is the smallest positive integer.\\
+            Then $<g> = \{e, g, g^2 \dots, g^{n-1}\}$\\
+            \textbf{CLAIM:} they are all distinct elements\\
+            \textbf{proof:} 
+            suppose $g^i = g^j$ for some $0 \le i,j \le n-1$\\
+            Suppose $i \le j$\\
+            $g^{-i} g^i = g^{-i}g^j$\\
+            $e = g^{j-i}$\\
+            Since $i \le j$, then $j-i \ge 0$\\
+            Therefore, $j - i = 0$\\
+            Therefore, $j = i$\\
+            Therefore, $g^i = g^j$\\
+            Therefore, for all $0,1,2,\dots,n-1$, $g^i$ are all distinct.\\
+            Therefore, $g^i$ are all distinct.\\
+            Therefore, $|<g>| = n \Rightarrow |<g>| = |g|$ 
+        \end{proof}
+        \item \rem 16.4 Let $g\in G$ then $<g>$ is a subgroup of $G$.
+        \item \rem 16.5 $<g>$ is cyclic group (is a cyclic subgroup of G)
+        \item \theo 16.6 Let $H$ be a subgroup of group $G$ then $|H|$ divides $|G|$
+        \item \exe 16.7 Let $G$ be a group with $G$ = 7, Then the only subgroups of $G$ are $H = G$ or $H = \{e\}$\\
+        If $H < G$ is a subgroup of $G$ then $|H|$ divides $|G|$\\
+        Therefore, $|H| = 1 $ or 7.\\
+        Therefore, $H = G$ or $H = \{e\}$
+        \item \coro 16.8 $g \in G$, then $|g|$ divides $|G|$
+        \begin{proof}
+            $|g|=|<g>|$, $<g>$ is a subgroup of $|G|$.\\
+            Then $|<g>|$ divides $|G|$.\\
+            Then $|g|$ divides $|G|$.
+        \end{proof}
+        \item Let $G= S_3$ let $x \in G$ what are the possible orders of x?\\
+        $|G| = |S_3| = 6$\\
+        $\Rightarrow |x| = 1,2,3,6$
+        We know that orders are only 1,2,3. Not all divisors appear as order of elements.
+        \item \prop 16.10 Let $G$ be a group, $|G| = n < \infty$ then $G$ is cyclic $\Leftrightarrow$ $\exists x \in G, |x| = n$
+        \begin{proof}
+            \textbf{Exercise}
+
+        \end{proof}
+        \item 16.11 $G=S_3$ $G$ is not cyclic since there is no element of order $|G|$.
+        \item \rem 16.12 $<g> = \{g^i\}$\\
+        Under addition: $(G,+)$ then $<g> = \{0,g,2g,3g,\dots, ng\}$
+        \item \recall 16.14\\
+        $G = (Z_12, +_12)$ then $G = \{4,8,12 = 0\}$
+        \item \exe 16.14 $G = (Z_12, +_12)$, show, $G$ is cyclic
+        \begin{proof}
+            To show $G$ is cyclic, we need to find an element of order 12.\\
+            1 has order 12 since $<1> = \{1,2,3,4,5,6,7,8,9,10,11,12 = 0 = e\}$\\
+            Then we can say: \textbf{1 is a generator of G}\\
+            Any number that is relatively prime to 12 is a generator of $G$\\
+            1,5,7,11 are generators of $G$
+        \end{proof}
+        \item \defi 16.15 Let $G$ be a group. Let $H$ be a subgroup. Let $a \in G$. a \textbf{left coset} of $H$ in $G$
+        $$aH := \{ah \ | \ h \in H\}$$
+        \textbf{NOTE: Not simply mean multiplication. It is the binary operation in the group}
+        \item \exe 16.16 Let $G = S_3$ Let $H = <(13)> = \{(13), (1)\}$. Find all left cosets of $H$\\
+        \begin{tabular}{c|cc}
+            & (13) & (1)\\ \hline
+            (1) & (13) & (1)\\
+            (12) & (132) & (12)\\
+            (13) & (1) & (13)\\
+            (23) & (123) & (23)\\
+            (123) & (23) & (123)\\
+            (132) & (12) & (132)\\
+        \end{tabular}
+        \begin{itemize}
+            \item Disjoint (or the same) cosets
+            \item aH = H $\Leftrightarrow$ $a \in H$
+            \item $a \in aH$
+            \item $a \in bH \Leftrightarrow aH = bH \Leftrightarrow b \in aH$
+            \item $|H| = |aH|$
+            \item \# of disjoint cosets = 3 = $\frac{|G|}{|H|}$
+            \item $G = \cup $ all cosets.
+        \end{itemize}
+    \end{enumerate}
 
 +1 (01.27)
 \end{enumerate}
