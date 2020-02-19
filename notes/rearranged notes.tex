@@ -1,0 +1,148 @@
+\documentclass[12pt]{article}  
+\usepackage{graphicx}
+\usepackage{geometry}   %设置页边距的宏包
+\usepackage{algpseudocode}
+\usepackage{comment}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{framed}
+\usepackage{verbatim}
+\usepackage{microtype}
+\usepackage{kpfonts}
+\usepackage{multicol}
+\usepackage{amsfonts}
+\usepackage{array}
+\usepackage{color}
+\usepackage{pgf,tikz}
+\usetikzlibrary{automata, positioning, arrows}
+\usepackage{wrapfig}
+\newcommand{\solu}{{\color{blue} Solution:}}
+\newcommand{\theo}{{\color{blue} Theorem: $\ $}}
+\newcommand{\defi}{{\color{blue} Definition: $\ $}}
+\newcommand{\recall}{{\color{blue} Recall: $\ $}}
+\newcommand{\exe}{{\color{green} Example: $\ $}}
+\newcommand{\prop}{{\color{blue} Prop: $\ $}}
+\newcommand{\rem}{{\color{blue} Remark: $\ $}}
+\newcommand{\coro}{{\color{blue} Corollary: $\ $}}
+
+
+
+\newcommand{\hw}{{\color{red} Homework: $\ $}}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\Ib}{\mathbf{I}}
+\newcommand{\Pb}{\mathbf{P}}
+\newcommand{\Qb}{\mathbf{Q}}
+\newcommand{\Rb}{\mathbf{R}}
+\newcommand{\Nb}{\mathbf{N}}
+\newcommand{\Fb}{\mathbf{F}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\Lap}{\mathcal{L}}
+\newcommand{\Zplus}{\mathbf{Z}^+}
+\geometry{left=2cm,right=2cm,top=1.5cm,bottom=2cm}  %设置 上、左、下、右 页边距
+
+\title{MATH 3175 quiz3 review}
+\date{}
+\author{Xin Guan}
+
+\begin{document}
+    \begin{itemize}
+        \item \textbf{Bijection}: \\
+        Function $f: X \rightarrow Y$ is bijection if $f$ is both surjection(on to) and injection (one to one)
+        \textbf{Proposition}:
+        \begin{enumerate}
+            \item $f: X \rightarrow Y$ is bijection $\Leftrightarrow$\\
+            $\exists g: Y \rightarrow X$ s.t. $g \circ f = id_x, f \circ g = id_y$ ($id_x \rightarrow$ identity)
+            \item Composition Properties:\\
+            $\circ$ Composition of two injective functions is injective. \\
+            $\circ$ Composition of two surjective functions is surjective.\\
+            $\circ$ Composition of two bijective functions is bijective.
+        \end{enumerate}
+        \item \textbf{Permutation:}\\
+        Permutation on set $X$ is a bijection $f : X \rightarrow X$\\
+        If $X = \{1,2,\dots,n\}$ then, $S_n :=$ \{all permutation on $X$\} 
+        \textbf{Proposition:}
+        \begin{enumerate}
+            \item if $f: X \rightarrow X$ is a permutation then $\exists f^{-1}: X \rightarrow X$ which is also permutation.
+            \item composition of two permutation is again a permutation.
+        \end{enumerate}
+        \item \textbf{Group 5 Rules}:
+        \begin{enumerate}
+            \item Closed under binary operation
+            \item associative: (ab)c = a(bc)
+            \item identity: $\exists e \in G, ea = ae = a \forall a \in G$
+            \item inverse: $\forall a \in G, \exists! a^{-1} s.t. a^{-1}a = aa^{-1} = e$
+            \item commutative $a,b \in G, ab = ba$.
+        \end{enumerate}
+        1,2: semigroup\\
+        1,2,3: monoid\\
+        1,2,3,4: group\\
+        1,2,3,4,5: Abelian group
+        \item \textbf{Subgroup}: $H$ is a subgroup of $G$ if
+        \begin{itemize}
+            \item $H \subseteq G$
+            \item $H$ is a group
+        \end{itemize}
+        \textbf{CHECK a SUBGROUP:}
+        \begin{itemize}
+            \item $H \subseteq G$ (subset)
+            \item $e \in H$ (non empty)
+            \item $\forall a,b \in H, ab \in H$ (closed)
+            \item $\forall a \in H, a^{-1} \in H$
+        \end{itemize}
+        Proper subgroup: subgroup $H$ that is not $H \ne G$
+        \item \textbf{Order}:\\
+        Order of a group: $|G|$ = \# of elements in the group\\
+        Order of an element: $g\in G, |g| = \textbf{smallest positive integer }n, \ s.t. \ x^n = e$
+        \item $<x> := \{\ x^n \ | \ n \in \mathbb{Z}\}$
+        \item \textbf{Conjugate}: $x,g\in G$, conjugate of $x$ by $g$: $gxg^{-1}$\\
+        Conjugate class of x:= \{$gxg^{-1} \ | \ \forall g \in G$\}
+        \item \textbf{ISOMORPHISMS of GROUP}: a function $f : G \rightarrow G'$ is called isomorphism if:
+        \begin{enumerate}
+            \item $f(xy) = f(x)f(y)$
+            \item $f$ is one to one (injective)
+            \item $f$ is onto (surjective)
+        \end{enumerate}
+        \item \textbf{Cyclic}: $\exists a \in G, \ s.t. \ <a> = G$
+        \item \textbf{Center of Group}:\\
+        Center of a Group $G: Z(G):= \{Z\in G | gz = zg, \ \forall g \in G\}$\\
+        \textbf{Proposition:}
+        \begin{enumerate}
+            \item $Z(G)$ is asubgroup of $G$.
+            \item If $G$ is abelian, then $Z(G) = G$
+        \end{enumerate}
+        \item \textbf{External direct product of Groups:}\\
+        Group $G, H$, Define $G \times H :=\{(x,y) \ | \ x\in G, y \in H\}$\\
+        $(x_1,y_1)(x_2, y_2) = (x_1x_2, y_1y_2)$\\
+        \textbf{Proposition:}
+        \begin{enumerate}
+            \item $e_{G\times H} = (e_G, e_H)$
+            \item $(x,y)^{-1} = (x^{-1, y^{-1}})$
+            \item $|(x,y)| = LCM(|x|, |y|)$
+        \end{enumerate}
+        \item \textbf{Internal product of groups:}\\
+        Group $G$ has subgroup $H, K$. Defind $HK:=\{xy | x\in H, y \in K\}$\\
+        \textbf{NOTE:} $HK$ is not always a subgroup.\\
+        \textbf{Proposition:}
+        \begin{enumerate}
+            \item $H,K$ are subgroup of $G$. \\
+            Suppose $x^{-1}yx\in K, \forall x\in H, y \in K$ Then $HK$ is a subgroup of $G$.\\
+            \textbf{Corollary}: $H,K$ are subgroup of abelien group $G$, then $HK$ is a subgroup of $G$.
+        \end{enumerate}
+        \item \textbf{Group Homomorphisms:}\\
+        $f: G \rightarrow G'$ if $f(xy) = f(x)f(y) \forall x,y \in G$\\
+        Compared to isomorphism, we don't need bijection.
+        \item \textbf{Kernal and Image:}\\
+        $f: G \rightarrow G'$, Define:\\
+        Kerf $:=\{g \in G \ | \ f(g) = e_G'\}$\\
+        Imf $:= \{y \in G' \ | \ \exists x \in G, s.t. \ f(x) = y\} \equiv \{f(x) \ | \ x\in G\}$\\
+        \textbf{Proposition:}
+        \begin{enumerate}
+            \item $f: G \rightarrow G'$ be group homomorphism:
+            \begin{itemize}
+                \item kerf is a subgroup of $G$
+                \item Imf is a subgroup of $G'$
+            \end{itemize}
+        \end{enumerate}
+    \end{itemize}
+\end{document}
