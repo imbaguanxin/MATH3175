@@ -78,6 +78,13 @@
         1,2,3: monoid\\
         1,2,3,4: group\\
         1,2,3,4,5: Abelian group
+        \item \textbf{Equivalence Relation:}\\
+        Operation $~$ in Group $G$ is equivalence if 
+        \begin{enumerate}
+            \item Reflective: $g ~ g, \forall g \in G$
+            \item Symmetry: $g ~ g' \Rightarrow g' ~ g, \forall g,g' \in G$
+            \item transitive: $x~y, y~z \Rightarrow x ~ z \forall x,y,z$
+        \end{enumerate}
         \item \textbf{Subgroup}: $H$ is a subgroup of $G$ if
         \begin{itemize}
             \item $H \subseteq G$
@@ -93,7 +100,11 @@
         Proper subgroup: subgroup $H$ that is not $H \ne G$
         \item \textbf{Order}:\\
         Order of a group: $|G|$ = \# of elements in the group\\
-        Order of an element: $g\in G, |g| = \textbf{smallest positive integer }n, \ s.t. \ x^n = e$
+        Order of an element: $g\in G, |g| = \textbf{smallest positive integer }n, \ s.t. \ x^n = e$\\
+        \textbf{Propositions:}
+        \begin{itemize}
+            \item If $H$ is a subgroup of $G$ then $|H| \ | \ |G|$. If $x \in G$, then $|x| \ | \ |G|$
+        \end{itemize}
         \item $<x> := \{\ x^n \ | \ n \in \mathbb{Z}\}$
         \item \textbf{Conjugate}: $x,g\in G$, conjugate of $x$ by $g$: $gxg^{-1}$\\
         Conjugate class of x:= \{$gxg^{-1} \ | \ \forall g \in G$\}
@@ -136,6 +147,14 @@
         $f: G \rightarrow G'$, Define:\\
         Kerf $:=\{g \in G \ | \ f(g) = e_G'\}$\\
         Imf $:= \{y \in G' \ | \ \exists x \in G, s.t. \ f(x) = y\} \equiv \{f(x) \ | \ x\in G\}$\\
+        \textbf{Lemma:}\\
+        $f: G \rightarrow G'$ be a group homomorphism.
+        \begin{enumerate}
+            \item $f(e_G) = e_{G'}$
+            \item $f(a^n) = (f(a))^n, \forall n >0, n \in \mathbb{Z}$
+            \item $f(a^{-1}) = (f(a))^{-1}$
+            \item From 2,3 we can conclude: $f(a^n) = (f(a))^n$
+        \end{enumerate}
         \textbf{Proposition:}
         \begin{enumerate}
             \item $f: G \rightarrow G'$ be group homomorphism:
@@ -143,6 +162,9 @@
                 \item kerf is a subgroup of $G$
                 \item Imf is a subgroup of $G'$
             \end{itemize}
+            \item If $G = <a>$ i.e. $G$ is a cyclic group. Then, it is enough to define homomorphism $f:G\rightarrow G'$ on $a$ and extend to all $a^n$.
+            \item $f: G\rightarrow G'$ be a group homomorphism, then $|f(a)| \ | \ |a|$
+            \item 
         \end{enumerate}
     \end{itemize}
 \end{document}
