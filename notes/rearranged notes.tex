@@ -164,7 +164,40 @@
             \end{itemize}
             \item If $G = <a>$ i.e. $G$ is a cyclic group. Then, it is enough to define homomorphism $f:G\rightarrow G'$ on $a$ and extend to all $a^n$.
             \item $f: G\rightarrow G'$ be a group homomorphism, then $|f(a)| \ | \ |a|$
-            \item 
         \end{enumerate}
+        \item \textbf{Left Coset and Right Coset:}\\
+        \defi \\
+        Let $G$ be a group , let $H$ be a subgroup of $G$.\\
+        Left coset of $H$ in $G$: $aH := \{ah \ | \ h \in G\}$\\
+        Right coset of $H$ in $G$: $Ha := \{ha \ | \ h \in G\}$
+        \textbf{Proposition:}
+        \begin{itemize}
+            \item $aH = H$ iff $a \in H$
+            \item \begin{tabular}{ccc}
+                $aH = bH$ & $\Leftrightarrow$ & $a\in bH$ \\
+                  & $\Leftrightarrow$ & $b\in aH$ \\
+                  & $\Leftrightarrow$ & $a^{-1}b\in H$ \\
+                  & $\Leftrightarrow$ & $b^{-1}a\in H$
+            \end{tabular}
+            \item $aH \cup bH$ = $\emptyset$ or $aH = bH$.\\
+            Only two posibilities. When it is $\emptyset$, properties above fails. When it is not $\emptyset$ the only posibility is that $aH = bH$ and above properties holds.
+            \item $G = \sqcup aH$ (disjoint union of left cosets.)\\
+            Taking elements inside the set $H$ won't generate new cosets. Only taking elements outside the set would generate new cosets.
+            \item $H < G, |aH| = |H|, \forall a \in G$
+        \end{itemize}
+        
+        \defi $H < G$, $[G:H]:=$ \# of left cosets of $H$ in $G$\\
+        \textbf{Properties:} $|G| = [G:H] \cdot |H| \Leftrightarrow [G:H] = |G|/|H|$\\
+        In general, $aH \ne Ha$, sometimes they are the same.
+        \item \textbf{Normal Subgroup:}\\
+        \defi $H <G, H$ is normal subgroup $\Leftrightarrow H \triangleleft G$ if $aH = Ha, \forall a \in G$.\\
+        \theo $H < G$, the following are equivalent:\\
+        \begin{itemize}
+            \item $H \triangleleft G$
+            \item $aH = Ha, \forall a \in G$
+            \item $aHa^{-1} \subseteq H, \forall a \in G$
+            \item $aHa^{-1} = H, \forall a \in G$
+        \end{itemize}
+        \prop If $G$ is an abelian group, then every subgroup of $G$ is normal.
     \end{itemize}
 \end{document}
