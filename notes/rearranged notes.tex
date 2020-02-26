@@ -99,10 +99,11 @@
         \end{itemize}
         Proper subgroup: subgroup $H$ that is not $H \ne G$
         \item \textbf{Order}:\\
-        Order of a group: $|G|$ = \# of elements in the group\\
+        Order of a group: $|G|$ = \# of elements in the group. If a group is infinite, then the order is $\infty$\\
         Order of an element: $g\in G, |g| = \textbf{smallest positive integer }n, \ s.t. \ x^n = e$\\
         \textbf{Propositions:}
         \begin{itemize}
+            \item Let $g \in G$, $|<g>| = |g|$
             \item If $H$ is a subgroup of $G$ then $|H| \ | \ |G|$. If $x \in G$, then $|x| \ | \ |G|$
         \end{itemize}
         \item $<x> := \{\ x^n \ | \ n \in \mathbb{Z}\}$
@@ -114,7 +115,15 @@
             \item $f$ is one to one (injective)
             \item $f$ is onto (surjective)
         \end{enumerate}
-        \item \textbf{Cyclic}: $\exists a \in G, \ s.t. \ <a> = G$
+        We use $G \cong G'$ (group isomorphisim) to show that $\exists f:G \rightarrow G'$ that is isomorphic. Then $|G| = |G'|$.
+        \textbf{Propositions:}
+        \begin{itemize}
+            \item \ Suppose $G\cong  G'$ Then $G$ is abelian $\Leftrightarrow$ $G'$ is abelian. (which implies that abelian group and non abelian group is not isomorphic)
+            \item if $G$ and $G'$ are cyclic and $|G| = |G'|$ then $G\cong G'$ 
+            \item Let $G = (Z_n, +_n) = \{[0], [1] \cdots, [n-1]\}$, $G' = (Z_n, +_n) = (\{0,1,2,\cdots, n-1\}, +_n)$
+            Then $G\cong G'$ and the isomorphisim can be take $[x]_n \rightarrow x$
+        \end{itemize}
+        \item \textbf{Cyclic}: $\exists a \in G, \ s.t. \ <a> = G$ such $a$ is called a generator.
         \item \textbf{Center of Group}:\\
         Center of a Group $G: Z(G):= \{Z\in G | gz = zg, \ \forall g \in G\}$\\
         \textbf{Proposition:}
@@ -128,7 +137,7 @@
         \textbf{Proposition:}
         \begin{enumerate}
             \item $e_{G\times H} = (e_G, e_H)$
-            \item $(x,y)^{-1} = (x^{-1, y^{-1}})$
+            \item $(x,y)^{-1} = (x^{-1}, y^{-1})$
             \item $|(x,y)| = LCM(|x|, |y|)$
         \end{enumerate}
         \item \textbf{Internal product of groups:}\\
