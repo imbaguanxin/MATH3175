@@ -15,6 +15,7 @@
 \usepackage{array}
 \usepackage{color}
 \usepackage{pgf,tikz}
+\usepackage{mathtools}
 \usetikzlibrary{automata, positioning, arrows}
 \usepackage{wrapfig}
 \newcommand{\solu}{{\color{blue} Solution:}}
@@ -115,7 +116,7 @@
             \item $f$ is one to one (injective)
             \item $f$ is onto (surjective)
         \end{enumerate}
-        We use $G \cong G'$ (group isomorphisim) to show that $\exists f:G \rightarrow G'$ that is isomorphic. Then $|G| = |G'|$.
+        $G \cong G'$ (group isomorphisim): $\exists f:G \rightarrow G'$ that is isomorphic. Then $|G| = |G'|$.\\
         \textbf{Propositions:}
         \begin{itemize}
             \item \ Suppose $G\cong  G'$ Then $G$ is abelian $\Leftrightarrow$ $G'$ is abelian. (which implies that abelian group and non abelian group is not isomorphic)
@@ -220,5 +221,35 @@
         \defi the sign of permutation $\sigma$ is the parity of the number of transpositions in any decompositions.\\
         To conclude: length of cycle is even $\Rightarrow$ parity odd; length of cycle is odd $\Rightarrow$ parity even.
         \prop even$\cdot$ even = even; even$\cdot$odd = odd; odd$\cdot$even = odd; odd$\cdot$odd = even
+    \item \textbf{Quotient Group:}\\
+    $H \triangleleft G$ then $G/H = \{aH \ | \ a \in G\}$. \\
+    $G/H$ is a group under operation: $(aH)(bH) = abH$. identity: $e_{G/H} = eH = H$. inverse: $(aH)^{-1} = a^{-1}H$
+    \item \textbf{Isomorphism Theorem:}
+    \begin{enumerate}
+        \item Let $f: G \rightarrow G'$ be a group homomorphism. Then $G/kerf \cong imf$
+        \begin{itemize}
+            \item Let $H < G$, let $i: H \rightarrow G$ be $i(x) = x$.\\
+            Then, 1. i is a gorup homomorphism.\\
+            2. i is one to one.\\
+            3. $ker(i) = e$\\
+            4. $im(i) = H$.
+            \item Let $H \triangleleft G$. Let $\pi: G \rightarrow G/H$ be given as $\Pi(x) = xH$\\
+            Then, 1. $\pi$ is a group homomorphism.\\
+            2. $ker(\pi) = H$\\
+            3. $\pi$ is onto \\
+            4. $Im(\pi) = G/H$.
+            \item \textbf{Theorem:} $f: G \rightarrow G'$, $f$ is a group homomorphism.
+            \begin{enumerate}
+                \item $ker(f) \triangleleft G$
+                \item $G/kerf$ is a group.
+                \item $Imf \le G'$, $Imf$ is a subgroup.
+                \item $f: G \rightarrow G'$ becomes:\\
+                $G \xrightarrow{\pi} G/kerf  \xrightarrow{\overbar{f}} Imf \xrightarrow{i'} G'$ , where $\overbar{f}(a\cdot kerf) = f(a)$\\
+                Then $f = i'\overbar{f}\pi$, i.e. any $f$ can be write in composition of $i\overbar{f}\pi$
+            \end{enumerate}
+        \end{itemize}
+        \item Let $H, N < G$, suppose $N \triangleleft G$, then $(H\cdot N) / N \cong H / (H \cup N)$
+        \item Let $K, H \triangleleft G$ (normal subgroup), suppose $K \subset H$. Then, $(G/K)\ / \ (H/K) \cong G / H$
+    \end{enumerate}
     \end{itemize}
 \end{document}
