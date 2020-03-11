@@ -244,11 +244,79 @@
                 \item $G/kerf$ is a group.
                 \item $Imf \le G'$, $Imf$ is a subgroup.
                 \item $f: G \rightarrow G'$ becomes:\\
-                $G \xrightarrow{\pi} G/kerf  \xrightarrow{\overbar{f}} Imf \xrightarrow{i'} G'$ , where $\overbar{f}(a\cdot kerf) = f(a)$\\
+                $G \xrightarrow{\pi} G/kerf  \xleftrightarrow{\overbar{f}} Imf \xleftarrow{i'} G'$ , where $\overbar{f}(a\cdot kerf) = f(a)$\\
                 Then $f = i'\overbar{f}\pi$, i.e. any $f$ can be write in composition of $i\overbar{f}\pi$
             \end{enumerate}
         \end{itemize}
-        \item Let $H, N < G$, suppose $N \triangleleft G$, then $(H\cdot N) / N \cong H / (H \cup N)$
+        \item Let $H, N < G$, suppose $N \triangleleft G$, then $(H\cdot N) / N \cong H / (H \cup N)$\\
+        Proof Steps:
+        \begin{enumerate}
+            \item $HN$ is a subgroup of $G$
+            \begin{proof}
+                \begin{itemize}
+                    \item Show $HN \subseteq G$\\
+                    $x \in HN \Rightarrow x = yz, y \in H, z \in N$\\
+                    $y \in H, H \subseteq G \Rightarrow y \in G$\\
+                    $z \in N, N \subseteq G \Rightarrow z \in G$\\
+                    Since $G$ is a group, $G$ is closed under operation. Therefore, $x = yz \in G$
+                    \item Show $e \in HN$\\
+                    Since $e = e\cdot e$ and $H, N$ are groups, then $e \in H, e \in N$.
+                    Therefore, $e \in HN$
+                    \item Closed under operation.\\
+                    \textbf{Claim:}$a, b \in HN$, \textbf{WTS:} $ab \in HN$\\
+                    By assumption $ \exists h \in H, n \in N, a = hn$\\
+                    By assumption $ \exists h' \in H, n' \in N, b = h'n'$\\
+                    Then $ab = hnh'n'$.\\
+                    $nh' \in Nh'$\\
+                    Since $N \triangleleft G \Rightarrow nh' \in h'N$\\
+                    Therefore, $\exists \hat{n} \in N $ s.t. $nh' = h'\hat{n}$\\
+                    Then,$ab = hnh'n' = hh'\hat{n}n'$.\\
+                    Since $hh' \in H, \hat{n}n' \in N$, $ab \in HN$.
+                    \item Closed under inversion.\\
+                    \textbf{Claim:}$a \in HN$, \textbf{WTS:} $a^{-1} \in HN$\\
+                    By assumption $\exists h \in H, n \in N, a = hn$\\
+                    Then $a^{-1} = n^{-1}h^{-1}$\\
+                    Since $n^{-1} \in N$, then $n^{-1}h^{-1} \in Nh^{-1}$\\
+                    Since $N$ is a normal subgroup of $G$ and $h^{-1} \in G$, then $n^{-1}h^{-1} \in h^{-1}N$.\\
+                    Then $\exists \hat{n} \in N$ s.t. $n^{-1}h^{-1} = h^{-1}\hat{n}$\\
+                    Since $h \in H$ and $H$ is a group, $h^{-1} \in H$\\
+                    $\Rightarrow a^{-1} = h^{-1}\hat{n}$ where $h^{-1} \in H, \hat{n} \in N$\\
+                    Therefore, $a^{-1} \in HN$
+                \end{itemize}
+            \end{proof}
+            \item $N$ is normal subgroup in $HN$
+            \begin{proof}
+                \begin{itemize}
+                    \item Show $N \subseteq HN$\\
+                    If $x\in N \Rightarrow \exists n \in N, \ s.t. \ x = en$\\
+                    Since $H$ is a group, then $e \in H$. Therefore, $x \in HN$\\
+                    Therefore, $\Rightarrow N \subseteq HN$
+                    \item Show $e \in N$: Trivial since $N$ is already a group by definition.
+                    \item Show $N$ closed under operation: Trivial since $N$ is already a group by definition.
+                    \item Show $N$ closed under inverse: Trivial since $N$ is already a group by definition.
+                \end{itemize}
+            \end{proof}
+            \item $HN/N$ is a group: This is a quotient group by definition.
+            \item $H \cap N \le H$: Skipped In Class (trivial)
+            \item $H \cap N \triangleleft H$: Skipped In Class
+            \item $HN/N \cong H/(N\cap H)$
+            \begin{proof}
+                We define an homomorphism $f: H \rightarrow HN/N, f(h) = hN$:\\
+                $
+                \left\{
+                    \begin{array}{lcl}
+                        H & \xrightarrow{i} & HN \\
+                        x &\xrightarrow{f} HN/N \xleftarrow{\pi}& HN
+                    \end{array}
+                \right.$\\
+                Then $kerf = \{x \in H \ | \ f(x)= e_{HN/N}\}$\\
+                $= \{x \in H \ | \ xN = N\}\\
+                =\{x \in H \ | \ x \in N\}\\
+                = H \cap N$\\
+                Use theoem A for $f$: $H/kerf \cong Imf$.\\
+                Then, $H/(H \cap N) \cong HN/N$
+            \end{proof}
+        \end{enumerate}
         \item Let $K, H \triangleleft G$ (normal subgroup), suppose $K \subset H$. Then, $(G/K)\ / \ (H/K) \cong G / H$
     \end{enumerate}
     \end{itemize}
